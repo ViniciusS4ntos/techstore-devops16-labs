@@ -46,8 +46,59 @@ const createProduct = ({ name, description, price, stock }) => {
     return newProduct;
 };
 
-module.exports = {
+// Funcao para atualizar um produto existente
+const updateProduct = (id, updatedData) => {
+
+    const products = getProducts();
+
+    const index = products.findIndex(
+        product => product.id === Number(id)
+    );
+
+    if (index === -1) {
+        throw new Error("Produto não encontrado.");
+    }
+
+    products[index] = {
+        ...products[index],
+        ...updatedData,
+        id: products[index].id
+    };
+
+    saveProducts(products);
+
+    return products[index];
+};
+
+
+// Funcao para excluir um produto
+const deleteProduct = (id) => {
+
+    const products = getProducts();
+
+    const index = products.findIndex(
+        product => product.id === Number(id)
+    );
+
+    if (index === -1) {
+        throw new Error("Produto não encontrado.");
+    }
+
+    const deletedProduct = products[index];
+
+    products.splice(index, 1);
+
+    saveProducts(products);
+
+    return deletedProduct;
+
+};
+
+
+module.exports = {  // Exporta as funções para serem utilizadas em outros módulos
     getProducts,
     saveProducts,
-    createProduct
+    createProduct,
+    updateProduct,
+    deleteProduct
 };
