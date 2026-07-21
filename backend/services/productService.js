@@ -29,10 +29,17 @@ const saveProducts = (products) => {
 // Funcao para criar (cadastrar) um novo produto
 const createProduct = ({ name, description, price, stock }) => {
 
-    const products = getProducts();
+    const products = getProducts(); // Lê os produtos existentes do arquivo JSON
 
+    // Gerar um novo ID para o produto
+    const nextId =
+    products.length === 0
+        ? 1
+        : Math.max(...products.map(product => product.id)) + 1;
+
+        // Cria um novo objeto de produto com os dados fornecidos
     const newProduct = {
-        id: products.length + 1,
+        id: nextId,
         name,
         description,
         price,
