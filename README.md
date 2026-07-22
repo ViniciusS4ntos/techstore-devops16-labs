@@ -226,6 +226,7 @@ Em breve:
 ---
 
 Projeto — TechStore
+Última atualização: Julho de 2026
 
 ---
 
