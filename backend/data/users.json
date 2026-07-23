@@ -5,5 +5,12 @@
         "email": "matheus@email.com",
         "password": "$2b$10$OOgkxbLTxQ8wILk.iZc0curPdHdKI.KWfPxhABKkVilovNfkdiLD2",
         "role": "customer"
+    },
+    {
+        "id": 2,
+        "name": "Alice",
+        "email": "alice@email.com",
+        "password": "$2b$10$OOgkxbLTxQ8wILk.iZc0curPdHdKI.KWfPxhABKkVilovNfkdiLD2",
+        "role": "customer"
     }
 ]
